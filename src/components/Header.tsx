@@ -1,27 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { CarFront } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 
 import Container from "./Container";
 import Navigation from "./Navigation";
 
-const Header = () => {
+interface HeaderProps {
+  bgColor?: "black" | "#101010"; // Add a prop to choose between two colors
+}
+
+const Header: React.FC<HeaderProps> = ({ bgColor = "black" }) => {
   return (
-    <header className="py-5">
+    <header
+      className={`py-5 ${bgColor === "black" ? "bg-black" : "bg-[#101010]"}`}
+    >
       <Container className="flex items-center justify-between">
         <Link href={"/"}>
           <Image
-            src={"/assets/shared/desktop/logo"}
+            src={"/assets/shared/desktop/logo.svg"}
             alt="Logo"
             width={143}
             height={25}
           />
         </Link>
         <Navigation />
-        <CarFront />
+        <ShoppingCart
+          className={bgColor === "black" ? "text-white" : "text-black"}
+        />
       </Container>
     </header>
   );
 };
+
 export default Header;

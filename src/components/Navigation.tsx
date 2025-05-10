@@ -18,10 +18,10 @@ const Navigation = () => {
           >
             {item?.title}
             <span
-              className={`bg-text-dark_orange hoverEffect absolute -bottom-0.5 left-1/2 h-0.5 w-0 group-hover:left-0 group-hover:w-1/2 ${pathname === item?.href && "w-1/2"}`}
+              className={`bg-dark_orange hoverEffect absolute -bottom-0.5 left-1/2 h-0.5 w-0 group-hover:left-0 group-hover:w-1/2 ${pathname === item?.href && "w-1/2"}`}
             />
             <span
-              className={`bg-text-dark_orange absolute right-1/2 -bottom-0.5 h-0.5 w-0 group-hover:right-0 group-hover:w-1/2 ${pathname === item?.href && "w-1/2"}`}
+              className={`bg-dark_orange absolute right-1/2 -bottom-0.5 h-0.5 w-0 group-hover:right-0 group-hover:w-1/2 ${pathname === item?.href && "w-1/2"}`}
             />
           </Link>
         );
